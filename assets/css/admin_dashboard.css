@@ -1,0 +1,122 @@
+/* === BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdfaf6;
+  color: #2d2d2d;
+  padding: 40px 25px;
+}
+
+/* === TITLE === */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4e342e;
+}
+p {
+  font-size: 15px;
+  color: #7e6e66;
+}
+
+/* === STAT CARDS === */
+.stat-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.card-stat {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.card-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.card-stat h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5d4037;
+  margin-bottom: 10px;
+}
+
+.card-stat p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3e2723;
+  margin: 0;
+}
+
+/* === NAVIGATION SECTION === */
+.nav-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card-nav {
+  background: #fff9f4;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.card-nav:hover {
+  transform: translateY(-4px);
+  background: #fff2e0;
+}
+
+.card-nav h5 {
+  color: #4e342e;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-nav a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #6d4c41;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.card-nav a:hover {
+  background: #4e342e;
+}
+
+/* === LOGOUT === */
+.logout-btn {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.logout-btn a {
+  background: #e57373;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.logout-btn a:hover {
+  background: #c62828;
+}

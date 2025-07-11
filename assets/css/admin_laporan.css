@@ -1,0 +1,123 @@
+/* === GLOBAL === */
+body {
+  background: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
+  color: #343a40;
+}
+
+h3, h4 {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+a.btn {
+  font-weight: 500;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+a.btn:hover {
+  transform: scale(1.02);
+}
+
+/* === FORM FILTER === */
+form .form-control {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+form .btn-dark {
+  background: #2c3e50;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+form .btn-dark:hover {
+  background: #1c2833;
+}
+
+/* === TABEL === */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.table th {
+  background-color: #2c3e50;
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table tfoot td {
+  background: #e9f7ef;
+  font-weight: bold;
+}
+
+/* === KARTU TRANSAKSI === */
+.card {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  background: #2c3e50;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 14px 14px 0 0;
+}
+
+.card-body {
+  background-color: white;
+  padding: 20px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+/* === ALERT === */
+.alert-success {
+  border-radius: 10px;
+  background-color: #d1f7dc;
+  color: #2e7d32;
+  font-size: 17px;
+  font-weight: 600;
+  border: 1px solid #c3e6cb;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+
+  .card-header {
+    font-size: 14px;
+  }
+
+  h3, h4 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,346 @@
+:root {
+  /* Coffee Shop Color Palette */
+  --cafe-dark: #4B3B2D;    /* Warna kayu espresso */
+  --cafe-light: #D7CEC5;   /* Warna latte */
+  --cream: #F5F0E6;        /* Warna creamy santai */
+  --accent-gold: #D4AF37;  /* Emas elegan */
+  --text-dark: #333333;    /* Teks gelap */
+  --text-medium: #5A5A5A;  /* Teks medium */
+  --transition-smooth: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--cafe-dark) 0%, var(--cafe-light) 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .brand {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent-gold);
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.sidebar a:hover, 
+.sidebar a.active {
+  background: var(--accent-gold);
+  color: var(--cafe-dark);
+}
+
+.kasir-info {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--cream);
+  font-size: 0.9rem;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  margin-left: 280px; /* Sesuaikan dengan lebar sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Input Styles */
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  border-color: var(--accent-gold);
+}
+
+/* Button Styles */
+button {
+  background: var(--accent-gold);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #b5942e; /* Warna lebih gelap saat hover */
+}
+
+/* Menu Card Styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-card h4 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.menu-card p {
+  margin: 0 10px 10px;
+  color: var(--text-medium);
+}
+
+/* Order Sidebar Styles */
+.order-sidebar {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  flex-basis: 300px; /* Lebar tetap untuk sidebar pesanan */
+}
+
+.order-sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--cafe-dark);
+}
+
+.total-section {
+  margin-top: 20px;
+}
+
+.total-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cafe-dark);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-container {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .btn-toggle-sidebar {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+  }
+}
+@media (max-width: 768px) {
+  .menu-card {
+    margin: 0.5rem; /* Mengurangi margin untuk tampilan mobile */
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar mengambil lebar penuh di mobile */
+  }
+
+  .order-sidebar {
+    flex-basis: 100%; /* Order sidebar juga mengambil lebar penuh */
+    margin-left: 0; /* Menghilangkan margin di mobile */
+  }
+
+  .btn-toggle-sidebar {
+    display: block; /* Tampilkan tombol toggle di mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Sesuaikan ukuran font judul */
+  }
+}
+
+/* ==================== */
+/* RIWAYAT TRANSAKSI */
+/* ==================== */
+
+/* Form Filter */
+.form-filter {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form-filter input[type="date"] {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--cafe-light);
+  flex: 1;
+  max-width: 220px;
+}
+
+/* Summary Card */
+.summary-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.summary-card h4 {
+  margin-bottom: 1rem;
+  color: var(--cafe-dark);
+}
+
+/* Transaction Card */
+.transaction-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.transaction-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.trx-id {
+  font-weight: 600;
+  color: var(--cafe-dark);
+}
+
+.trx-time {
+  background: var(--latte);
+  color: var(--cafe-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+}
+
+.transaction-total {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--cafe-dark);
+}
+
+.menu-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--cafe-light);
+}
+
+.transaction-footer {
+  font-size: 0.85rem;
+  color: var(--text-medium);
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--cafe-light);
+}
+
+.back-btn-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent-gold);
+  color: var(--cafe-dark);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.btn-back:hover {
+  background: var(--caramel);
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-filter {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .form-filter input[type="date"] {
+    max-width: 100%;
+  }
+
+  .transaction-card {
+    padding: 1rem;
+  }
+}

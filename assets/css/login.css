@@ -1,0 +1,137 @@
+/* assets/css/login.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.login-container {
+  background: #2b2b2b;
+  padding: 40px 24px;
+  border-radius: 16px;
+  /* box-shadow: 0 0 20px rgba(0,0,0,0.4); */
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Bayangan lebih halus */
+}
+  .login-container {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: fadeIn 0.5s forwards; /* Animasi saat muncul */
+  }
+
+  @keyframes fadeIn {
+      to {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+  
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #444;
+  color: #fff;
+  font-size: 16px;
+  transition: border 0.3s ease; /* Transisi border */
+}
+
+.input-group input:focus {
+  border: 2px solid #a0522d; /* Warna border saat fokus */
+  outline: none;
+}
+
+.input-group input,
+button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 120px;
+  height: auto;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #a0522d;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #8b4513;
+}
+
+button:disabled {
+  background: #666; /* Warna abu-abu saat disabled */
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: #a0522d; /* Warna link */
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.error-message {
+  color: #ff4d4d; /* Warna merah untuk pesan kesalahan */
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    padding: 60px;
+    max-width: 500px;
+  }
+
+  .input-group input {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+}
